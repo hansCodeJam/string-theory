@@ -63,23 +63,29 @@ function titleCase(str) {
 
   return newString.join(' ');
 }
-// function toUpper(str) {
-//   return str
-//       .toLowerCase()
-//       .split(' ')
-//       .map(function(word) {
-//           console.log("First capital letter: "+word[0]);
-//           console.log("remain letters: "+ word.substr(1));
-//           return word[0].toUpperCase() + word.substr(1);
-//       })
-//       .join(' ');
-//    }
-function onlyVowels(str) {
 
+function onlyVowels(str) {
+  let newString = '';
+  let vowel = 'aeiouAEIOU';
+
+  for(let i = 0; i < str.length; i++) {
+    if(vowel.includes(str[i])){
+      newString = newString + str[i];
+    }
+    return newString;
+  }
 }
 
 function crazyCase3SonOfCrazyCase(str) {
-
+  let newStr = ''
+  for (let i = 0; i < str.length; i++) {
+    if(i % 2 === 1){
+      newStr = newStr + str.charAt(i).toUpperCase()
+    } else {
+      newStr = newStr + str.charAt(i).toLowerCase()
+    }
+  }
+  return newStr
 }
 
 
